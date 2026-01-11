@@ -14,6 +14,8 @@ import StocksPage from "./pages/StocksPage";
 import RetraitPage from "./pages/RetraitPage";
 import HistoriquePage from "./pages/HistoriquePage";
 import NotFound from "./pages/NotFound";
+import ExportsPage from "./pages/ExportPage";
+import ParametresPage from "./pages/SettingsPage";
 
 const queryClient = new QueryClient();
 
@@ -26,7 +28,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Navigate to="/login" replace />} />
           <Route path="/login" element={<LoginPage />} />
-          
+
           {/* Protected routes with layout */}
           <Route element={<MainLayout />}>
             <Route path="/dashboard" element={<DashboardPage />} />
@@ -37,10 +39,10 @@ const App = () => (
             <Route path="/vehicules" element={<VehiculesPage />} />
             <Route path="/historique" element={<HistoriquePage />} />
             <Route path="/statistiques" element={<StatistiquesPage />} />
-            <Route path="/exports" element={<div className="p-6"><h1 className="text-2xl font-bold">Exports</h1><p className="text-muted-foreground">À venir</p></div>} />
-            <Route path="/parametres" element={<div className="p-6"><h1 className="text-2xl font-bold">Paramètres</h1><p className="text-muted-foreground">À venir</p></div>} />
+            <Route path="/exports" element={<ExportsPage />} />
+            <Route path="/parametres" element={<ParametresPage />} />
           </Route>
-          
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
